@@ -1,0 +1,323 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wiaam Salem - Portfolio</title>
+    <link rel="stylesheet" href="styles/main.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Header with Navigation -->
+    <header>
+      <div class="header-container">
+        <a href="#home" class="logo">
+          <i class="fas fa-code"></i>
+          Wiaam Salem<span></span>
+        </a>
+
+        <button class="hamburger" id="hamburger">
+          <i class="fas fa-bars"></i>
+        </button>
+
+        <nav id="nav">
+          <ul>
+            <li><a href="#home" class="active">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Home/Hero Section -->
+    <section id="home" class="hero">
+      <div class="hero-content">
+        <div class="hero-text">
+          <h3 class="welcome-text">Hi, I'm</h3>
+          <h1>Wiaam Salem</h1>
+          <h2 class="typing-text">Back-End Laravel Developer</h2>
+          <div class="hero-tagline">
+            <p>Building robust web solutions with clean, efficient code</p>
+          </div>
+          <a href="#projects" class="btn"
+            >View My Work <i class="fas fa-arrow-down"></i
+          ></a>
+        </div>
+
+        <div class="hero-stats">
+          <div class="stat-item">
+            <span class="stat-number">2+</span>
+            <span class="stat-label">Years Experience</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">+5</span>
+            <span class="stat-label">Projects</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">99%</span>
+            <span class="stat-label">Client Satisfaction</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="scroll-indicator">
+        <span>Scroll down</span>
+        <div class="mouse"></div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+      <div class="container">
+        <h2>About Me</h2>
+        <div class="about-content">
+          <p>
+            <strong
+              >Laravel Developer | Backend Specialist | Problem Solver</strong
+            >
+          </p>
+
+          <p>
+            With 2 years of hands-on experience in building robust web
+            applications, I specialize in crafting clean, efficient backend
+            solutions using Laravel and PHP. I thrive on turning complex
+            problems into elegant, scalable code—whether it's optimizing
+            database queries, designing RESTful APIs, or debugging elusive
+            issues.
+          </p>
+
+          <p><strong>What I bring to the table:</strong></p>
+
+          <ul class="skills-list">
+            <li>
+              🛠️ <strong>Laravel Expertise</strong>: Proficient in MVC
+              architecture, Eloquent ORM, Blade templating, and Laravel
+              Livewire.
+            </li>
+            <li>
+              🚀 <strong>Problem-Solving Mindset</strong>: Love dissecting
+              challenges—from performance bottlenecks to seamless API
+              integrations.
+            </li>
+            <li>
+              📦 <strong>Full-Stack Awareness</strong>: Comfortable working with
+              frontend tools (HTML/CSS/JS) to collaborate effectively in
+              end-to-end projects.
+            </li>
+            <li>
+              🔄 <strong>Best Practices</strong>: Advocate for DRY code,
+              automated testing (PHPUnit), and secure deployments.
+            </li>
+          </ul>
+
+          <p>
+            When I'm not coding, I'm probably contributing to open-source
+            projects, learning new architectural patterns, or mentoring junior
+            developers. Let's build something amazing together!
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+      <div class="container">
+        <h2>My Skills</h2>
+        <div class="skills-list">
+          <div class="skill-item">
+            <i class="fab fa-laravel"></i>
+            <p>Laravel</p>
+          </div>
+          <div class="skill-item">
+            <i class="fas fa-brain"></i>
+            <p>Problem Solving</p>
+          </div>
+          <div class="skill-item">
+            <i class="fab fa-git-alt"></i>
+            <p>Git</p>
+          </div>
+          <div class="skill-item">
+            <i class="fab fa-github"></i>
+            <p>GitHub</p>
+          </div>
+          <div class="skill-item">
+            <i class="fab fa-html5"></i>
+            <p>HTML5</p>
+          </div>
+          <div class="skill-item">
+            <i class="fab fa-css3-alt"></i>
+            <p>CSS3</p>
+          </div>
+          <div class="skill-item">
+            <i class="fab fa-js"></i>
+            <p>JavaScript</p>
+          </div>
+          <div class="skill-item">
+            <i class="fab fa-php"></i>
+            <p>PHP</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+      <div class="container">
+        <h2>My Projects</h2>
+        <div class="project-grid">
+          <!-- LMS Project Item -->
+          <div class="project-item">
+            <img src="images/BrainLern.jpg" alt="Learning Management System" />
+            <div class="content">
+              <h3>BrainLearn LMS</h3>
+              <p>
+                A comprehensive learning platform offering online workshops and
+                premium courses with progress tracking, certifications, and
+                community features.
+              </p>
+              <div class="tech-stack">
+                <span>Laravel</span>
+                <span>Livewire</span>
+                <span>MySQL</span>
+                <span>Stripe API</span>
+              </div>
+              <div class="project-actions">
+                <a
+                  href="https://github.com/Wiaam409/Learning-Management-System"
+                  class="btn"
+                  >View Project Code</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Shipping Management System Project -->
+          <div class="project-item">
+            <img src="images/Cargo.jpg" alt="Shipping Management System" />
+            <div class="content">
+              <h3>ShipTrack Pro</h3>
+              <p>
+                A full-featured shipping management solution that automates
+                logistics operations, provides real-time tracking, and optimizes
+                delivery routes for businesses of all sizes.
+              </p>
+              <div class="tech-stack">
+                <span>Laravel</span>
+                <span>Vue.js</span>
+                <span>PostgreSQL</span>
+                <span>Mapbox API</span>
+                <span>Pusher</span>
+              </div>
+              <div class="project-actions">
+                <a
+                  href="https://github.com/AbdAlrahmanAlsaadi/ShippingCompany"
+                  class="btn"
+                  >View Project Code</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Pharmacy Management System Project -->
+          <div class="project-item">
+            <img src="images/Pharmacy.jpg" alt="Pharmacy Management System" />
+            <div class="content">
+              <h3>PharmaCare Management</h3>
+              <p>
+                A complete pharmacy management system for tracking inventory,
+                managing prescriptions, handling billing, and generating
+                reports.
+              </p>
+              <div class="tech-stack">
+                <span>Laravel</span>
+                <span>Livewire</span>
+                <span>MySQL</span>
+                <span>JavaScript</span>
+              </div>
+              <div class="project-actions">
+                <a
+                  href="https://github.com/Wiaam409/Pharmacy-Management-System"
+                  class="btn"
+                  >View Project Code</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Portfolio Project -->
+          <div class="project-item">
+            <img src="images/Portfolio.jpg" alt="Professional Portfolio" />
+            <div class="content">
+              <h3>Professional Portfolio</h3>
+              <p>
+                A responsive portfolio website showcasing projects, skills, and
+                contact information with modern animations and design.
+              </p>
+              <div class="tech-stack">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+                <span>Responsive Design</span>
+              </div>
+              <div class="project-actions">
+                <a
+                  href="https://github.com/Wiaam409/Professional-Portfolio"
+                  class="btn"
+                  >View Project Code</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+      <div class="container">
+        <h2>Contact Me</h2>
+        <div class="contact-form-container">
+          <form id="contact-form">
+            <input type="text" name="name" placeholder="Your Name" required />
+            <input
+              type="email"
+              name="email"
+              placeholder="Your Email"
+              required
+            />
+            <textarea
+              name="message"
+              placeholder="Your Message"
+              required
+            ></textarea>
+            <button type="submit" class="btn">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <p>&copy; 2025 Wiaam Salem. All rights reserved.</p>
+        <div class="social-links">
+          <a href="https://www.linkedin.com/in/wiaam409"
+            ><i class="fab fa-linkedin"></i
+          ></a>
+          <a href="https://github.com/Wiaam409"
+            ><i class="fab fa-github"></i
+          ></a>
+          <a href="https://t.me/Wiaam_SM"><i class="fab fa-telegram"></i></a>
+        </div>
+      </div>
+    </footer>
+    <script src="scripts/main.js"></script>
+  </body>
+</html>
