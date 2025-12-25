@@ -4,9 +4,9 @@ document.addEventListener("DOMContentLoaded", function () {
   function initTypingAnimation() {
     const textElement = document.querySelector(".typing-text");
     const roles = [
+      "Software Engineer",
       "Back-End Laravel Developer",
       "Problem Solver",
-      "Software Engineer",
     ];
     let roleIndex = 0;
     let charIndex = 0;
