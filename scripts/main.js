@@ -1,4 +1,4 @@
-// main.js
+// main.js (Corrected Version)
 document.addEventListener("DOMContentLoaded", function () {
   // Typing animation effect
   function initTypingAnimation() {
@@ -14,7 +14,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function type() {
       const currentRole = roles[roleIndex];
-
       if (isDeleting) {
         textElement.textContent = currentRole.substring(0, charIndex - 1);
         charIndex--;
@@ -22,13 +21,10 @@ document.addEventListener("DOMContentLoaded", function () {
         textElement.textContent = currentRole.substring(0, charIndex + 1);
         charIndex++;
       }
-
       let typeSpeed = 100;
-
       if (isDeleting) {
         typeSpeed /= 2;
       }
-
       if (!isDeleting && charIndex === currentRole.length) {
         typeSpeed = 2000;
         isDeleting = true;
@@ -36,13 +32,10 @@ document.addEventListener("DOMContentLoaded", function () {
         isDeleting = false;
         roleIndex = (roleIndex + 1) % roles.length;
       }
-
       setTimeout(type, typeSpeed);
     }
-
     type();
   }
-
   // Start the typing animation
   initTypingAnimation();
 
@@ -51,10 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          // Add the "visible" class to trigger animations
           entry.target.classList.add("visible");
-
-          // For elements with individual animations
           if (entry.target.classList.contains("skills")) {
             const skillItems = entry.target.querySelectorAll(".skill-item");
             skillItems.forEach((item, index) => {
@@ -68,8 +58,8 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     },
     {
-      threshold: 0.1, // Trigger when 10% of element is visible
-      rootMargin: "0px 0px -50px 0px", // Adjust trigger point
+      threshold: 0.1,
+      rootMargin: "0px 0px -50px 0px",
     }
   );
 
@@ -81,32 +71,23 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // Header scroll effect
-
   window.addEventListener("scroll", function () {
     const header = document.querySelector("header");
-    const logoIcon = document.querySelector(".logo i");
-
     if (window.scrollY > 50) {
       header.classList.add("scrolled");
     } else {
       header.classList.remove("scrolled");
     }
-
-    // Highlight active section in navigation
     const sections = document.querySelectorAll("section");
     const navLinks = document.querySelectorAll("nav ul li a");
-
     let current = "";
-
     sections.forEach((section) => {
       const sectionTop = section.offsetTop;
       const sectionHeight = section.clientHeight;
-
       if (pageYOffset >= sectionTop - sectionHeight / 3) {
         current = section.getAttribute("id");
       }
     });
-
     navLinks.forEach((link) => {
       link.classList.remove("active");
       if (link.getAttribute("href").substring(1) === current) {
@@ -121,7 +102,6 @@ document.addEventListener("DOMContentLoaded", function () {
       e.preventDefault();
       const targetId = this.getAttribute("href");
       const targetElement = document.querySelector(targetId);
-
       if (targetElement) {
         window.scrollTo({
           top: targetElement.offsetTop - 80,
@@ -131,25 +111,34 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // Form validation and submission
+  //=============== SEND EMAIL JS ===============
   const contactForm = document.getElementById("contact-form");
-  if (contactForm) {
-    contactForm.addEventListener("submit", function (e) {
-      e.preventDefault();
-      // Simple validation: check if fields are filled
-      const name = this.name.value.trim();
-      const email = this.email.value.trim();
-      const message = this.message.value.trim();
+  const contactMessage = document.getElementById("contact-message");
 
-      if (name && email && message) {
-        console.log("Form submitted:", { name, email, message });
-        alert("Thank you for your message! I will get back to you soon.");
-        this.reset();
-      } else {
-        alert("Please fill in all fields.");
-      }
-    });
-  }
+  const sendEmail = (e) => {
+    e.preventDefault();
+    emailjs
+      .sendForm(
+        "service_1mil15l",
+        "template_1jve192",
+        "#contact-form",
+        "D4_lmbXFb60I5gIWd"
+      )
+      .then(
+        () => {
+          contactMessage.textContent = "Message sent successfully ✅";
+          setTimeout(() => {
+            contactMessage.textContent = "";
+          }, 5000);
+          contactForm.reset();
+        },
+        () => {
+          contactMessage.textContent = "Message not sent (service error) ❌";
+        }
+      );
+  };
+
+  contactForm.addEventListener("submit", sendEmail);
 
   // Trigger hero animation after page load
   setTimeout(() => {

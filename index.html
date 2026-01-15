@@ -312,11 +312,8 @@
       <div class="container">
         <h2>Contact Me</h2>
         <div class="contact-form-container">
-          <form
-            id="contact-form"
-            action="https://formspree.io/f/meejwayy"
-            method="POST"
-          >
+          <!-- Remove the action and method attributes -->
+          <form id="contact-form">
             <input type="text" name="name" placeholder="Your Name" required />
             <input
               type="email"
@@ -330,6 +327,9 @@
               required
             ></textarea>
             <button type="submit" class="btn">Send Message</button>
+
+            <!-- Add this span for the confirmation message -->
+            <p class="contact__message" id="contact-message"></p>
           </form>
         </div>
       </div>
@@ -351,5 +351,10 @@
       </div>
     </footer>
     <script src="scripts/main.js"></script>
+    <!--=============== EMAIL JS ===============-->
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+    ></script>
   </body>
 </html>
