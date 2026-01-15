@@ -1,4 +1,4 @@
-// main.js (Corrected Version)
+// main.js (Corrected Version with Alert)
 document.addEventListener("DOMContentLoaded", function () {
   // Typing animation effect
   function initTypingAnimation() {
@@ -11,7 +11,6 @@ document.addEventListener("DOMContentLoaded", function () {
     let roleIndex = 0;
     let charIndex = 0;
     let isDeleting = false;
-
     function type() {
       const currentRole = roles[roleIndex];
       if (isDeleting) {
@@ -126,6 +125,11 @@ document.addEventListener("DOMContentLoaded", function () {
       )
       .then(
         () => {
+          // ==================================================
+          // THIS IS THE LINE I ADDED FOR THE ALERT
+          alert("Message sent successfully! Thank you.");
+          // ==================================================
+
           contactMessage.textContent = "Message sent successfully ✅";
           setTimeout(() => {
             contactMessage.textContent = "";
@@ -133,6 +137,8 @@ document.addEventListener("DOMContentLoaded", function () {
           contactForm.reset();
         },
         () => {
+          // You could also add an alert for the error case if you want
+          // alert("An error occurred. Please try again.");
           contactMessage.textContent = "Message not sent (service error) ❌";
         }
       );
